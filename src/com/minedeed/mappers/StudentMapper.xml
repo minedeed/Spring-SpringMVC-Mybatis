@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.minedeed.dao.StudentDao">
+
+	<insert id="addStudent" parameterType="Student">
+		insert into student
+		values(null,#{username},#{password},#{name},#{address},#{birthday},#{tel},#{email})
+	</insert>
+	<select id="login" parameterType="Student" resultType="Student">
+		select *
+		from student where username = #{username} and password =
+		#{password}
+	</select>
+	<select id="queryStudent" parameterType="int" resultType="Student">
+		select
+		* from student where id = #{id}
+	</select>
+	<update id="update" parameterType="Student">
+		update student set
+		username=#{username},password=#{password},name=#{name},address=#{address},tel=#{tel},email=#{email}
+		where id=#{id}
+	</update>
+</mapper> 
