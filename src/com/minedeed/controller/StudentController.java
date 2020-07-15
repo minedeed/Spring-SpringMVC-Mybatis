@@ -32,7 +32,7 @@ public class StudentController {
 		model.addAttribute("password", password);
 		stu.setUsername(username);
 		stu.setPassword(password);
-		System.out.println("???????" + stu.getUsername());
+		System.out.println("23333" + stu.getUsername());
 		ModelAndView modelAndView = new ModelAndView();
 		stu = studentSerivce.login(stu);
 		if (stu == null) {
